@@ -10,7 +10,7 @@
 #' @examples
 ggfreqweight = function(df, x, weights){
   return(ggplot(df, aes({{x}}))+geom_bar(aes(weight = {{weights}}, y = (..count..)/sum(..count..))))}
-ggfreqweight(crisp, Q21_1, weight1_PID)
+
 
 #' Crosstabs of Two Variables
 #'
