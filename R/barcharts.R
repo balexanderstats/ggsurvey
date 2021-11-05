@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples
-ggfreqweight = function(df, x, weights){
+ggbarweight = function(df, x, weights){
   return(ggplot(df, aes({{x}}))+geom_bar(aes(weight = {{weights}}, y = (..count..)/sum(..count..))))}
 
 
@@ -23,7 +23,7 @@ ggfreqweight = function(df, x, weights){
 #' @export
 #'
 #' @examples
-ggcrosstabs = function(df, x, y, weights){
+ggbarcrosstabs = function(df, x, y, weights){
   newdf = df %>% group_by({{x}},{{y}})  %>% tally(, wt = {{weights}}) %>% mutate(f = n/sum(n))
   plotnew = ggplot(newdf, aes({{y}}))+geom_bar(aes(weight = f))+facet_grid(cols = vars({{x}}))
   return(plotnew)
@@ -41,7 +41,7 @@ ggcrosstabs = function(df, x, y, weights){
 #' @export
 #'
 #' @examples
-ggcrosstabs3d = function(df, x, y, z, weights){
+ggbarcrosstabs3d = function(df, x, y, z, weights){
   newdf = df %>% group_by({{x}},{{y}}, {{z}})  %>% tally(, wt = {{weights}}) %>% mutate(f = n/sum(n))
   print(newdf)
   plotnew = ggplot(newdf, aes({{z}}))+geom_bar(aes(weight = f))+facet_grid(rows = vars({{x}}), cols = vars({{y}}))
