@@ -2,7 +2,7 @@
 % Please edit documentation in R/histograms.R
 \name{gghistweight3d}
 \alias{gghistweight3d}
-\title{Title}
+\title{Weighted Histogram with Two Facets}
 \usage{
 gghistweight3d(df, x, y, z, weights, binwidth = NULL)
 }
@@ -23,5 +23,5 @@ gghistweight3d(df, x, y, z, weights, binwidth = NULL)
 
 }
 \description{
-Title
+Weighted Histogram with Two Facets
 }

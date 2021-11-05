@@ -2,7 +2,7 @@
 % Please edit documentation in R/histograms.R
 \name{gghistweight}
 \alias{gghistweight}
-\title{Weighted Histograms}
+\title{Weighted Histogram}
 \usage{
 gghistweight(df, x, weights, binwidth = NULL)
 }
@@ -19,5 +19,5 @@ gghistweight(df, x, weights, binwidth = NULL)
 
 }
 \description{
-Weighted Histograms
+Weighted Histogram
 }

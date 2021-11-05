@@ -1,4 +1,4 @@
-#' Weighted Histograms
+#' Weighted Histogram
 #'
 #' @param df data frame
 #' @param x variable of interest
@@ -18,7 +18,7 @@ gghistweight = function(df, x, weights, binwidth = NULL){
   }
   return(plotnew)
 }
-#' Title
+#' Weighted Histogram with One Facet
 #'
 #' @param df data frame
 #' @param x first variable of interest
@@ -39,7 +39,7 @@ gghistweight2d = function(df, x, y, weights, binwidth = NULL){
   }
   return(plotnew)
 }
-#' Title
+#' Weighted Histogram with Two Facets
 #'
 #' @param df data frame
 #' @param x first variable of interest
