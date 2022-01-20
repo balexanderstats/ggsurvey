@@ -9,9 +9,9 @@ ggboxweight2d(df, x, y, weights)
 \arguments{
 \item{df}{data frame}
 
-\item{x}{categorical variable of interest}
+\item{x}{numeric variable of interest}
 
-\item{y}{numeric variable of interest}
+\item{y}{categorical variable of interest}
 
 \item{weights}{survey weights that sums to sample size}
 }
@@ -20,4 +20,9 @@ ggboxweight2d(df, x, y, weights)
 }
 \description{
 Weighted Box Plot with a categorical variable
+}
+\examples{
+library(survey)
+data(api)
+ggboxweight2d(apistrat, api00, stype, pw)
 }

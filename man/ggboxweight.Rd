@@ -19,3 +19,10 @@ ggboxweight(df, x, weights)
 \description{
 Weighted Box Plot of One Variable
 }
+\examples{
+library(survey)
+data(api)
+ggboxweight(apistrat, api00, pw)
+data(election)
+ggboxweight(election_pps, Bush, p)
+}

@@ -23,3 +23,9 @@ ggboxweight3d(df, x, y, z, weights)
 \description{
 Weighted Box Plot with a categorical x axis and a faceting variable
 }
+\examples{
+library(survey)
+data(api)
+ggboxweight3d(apistrat, api00, stype,awards, pw)
+ggboxweight3d(apistrat, api00, stype, awards, pw, binwidth = 10)
+}
