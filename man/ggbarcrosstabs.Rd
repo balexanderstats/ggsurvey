@@ -7,17 +7,24 @@
 ggbarcrosstabs(df, x, y, weights)
 }
 \arguments{
-\item{df}{survey data frame}
+\item{df}{data frame of survey}
 
-\item{x}{first variable of interest}
+\item{x}{variable to bar chart}
 
-\item{y}{second variable of interest}
+\item{y}{faceting variable}
 
 \item{weights}{survey weights that sum to sample size}
 }
 \value{
-
+ggplot object that can be customized using ggplot2 functions including adding titles
 }
 \description{
 Crosstabs of Two Variables
+}
+\examples{
+library(survey)
+data(api)
+ggbarcrosstabs(apistrat, stype, yr.rnd, pw)
+data(nhanes)
+ggbarcrosstabs(nhanes, race, agecat, WTMEC2YR)
 }

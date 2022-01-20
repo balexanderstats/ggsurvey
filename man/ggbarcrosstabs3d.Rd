@@ -2,18 +2,18 @@
 % Please edit documentation in R/barcharts.R
 \name{ggbarcrosstabs3d}
 \alias{ggbarcrosstabs3d}
-\title{Crosstabs of Three Variable}
+\title{Crosstabs of Three Variables}
 \usage{
 ggbarcrosstabs3d(df, x, y, z, weights)
 }
 \arguments{
-\item{df}{survey data frame}
+\item{df}{data frame}
 
-\item{x}{first variable of interest}
+\item{x}{bar chart variable}
 
-\item{y}{second variable of interest}
+\item{y}{crosstab variable 1 (horizontal facets)}
 
-\item{z}{third variable of interest}
+\item{z}{crosstab variable 2 (vertical facets)}
 
 \item{weights}{survey weights that sum to sample size}
 }
@@ -21,5 +21,12 @@ ggbarcrosstabs3d(df, x, y, z, weights)
 
 }
 \description{
-Crosstabs of Three Variable
+Crosstabs of Three Variables
+}
+\examples{
+library(survey)
+data(api)
+ggbarcrosstabs3d(apistrat, stype, yr.rnd, awards, pw)
+data(nhanes)
+ggbarcrosstabs3d(nhanes, race, agecat, RIAGENDR, WTMEC2YR)
 }

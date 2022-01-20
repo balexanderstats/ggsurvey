@@ -2,20 +2,28 @@
 % Please edit documentation in R/barcharts.R
 \name{ggbarweight}
 \alias{ggbarweight}
-\title{Weighted Bar Charts}
+\title{Weighted Univariate Bar Charts}
 \usage{
 ggbarweight(df, x, weights)
 }
 \arguments{
-\item{df}{survey dataframe}
+\item{df}{data frame of survey}
 
 \item{x}{name of question of interest}
 
 \item{weights}{survey weights that sums to sample size}
 }
 \value{
-ggplot
+ggplot object that can be customized using ggplot2 functions including adding titles
 }
 \description{
-Weighted Bar Charts
+Weighted Univariate Bar Charts
+}
+\examples{
+library(survey)
+#Example with data frame
+data(api)
+ggbarweight(apistrat, stype, pw)+ggtitle("Proportion of School Type")+ylab("Proportion")
+data(nhanes)
+ggbarweight(nhanes, race, WTMEC2YR)+ylab("Proportion")
 }
