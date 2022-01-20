@@ -23,3 +23,9 @@ gghistweight2d(df, x, y, weights, binwidth = NULL)
 \description{
 Weighted Histogram with One Facet
 }
+\examples{
+library(survey)
+data(api)
+gghistweight2d(apistrat, api00, stype, pw)
+gghistweight2d(apistrat, api00, stype, pw, binwidth = 10)
+}

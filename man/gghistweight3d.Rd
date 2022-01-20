@@ -25,3 +25,9 @@ gghistweight3d(df, x, y, z, weights, binwidth = NULL)
 \description{
 Weighted Histogram with Two Facets
 }
+\examples{
+library(survey)
+data(api)
+gghistweight3d(apistrat, api00, stype, awards, pw)
+gghistweight3d(apistrat, api00, stype, awards, pw, binwidth = 10)
+}

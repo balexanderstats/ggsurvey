@@ -21,3 +21,11 @@ gghistweight(df, x, weights, binwidth = NULL)
 \description{
 Weighted Histogram
 }
+\examples{
+library(survey)
+data(api)
+gghistweight(apistrat, api00, pw)
+gghistweight(apistrat, api00, pw, binwidth = 10)
+data(election)
+gghistweight(election_pps, Bush, p)
+}
