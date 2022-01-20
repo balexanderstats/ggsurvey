@@ -8,6 +8,8 @@
 #' @export
 #'
 #' @examples
+#' library(survey)
+#' data(api)
 ggbarweight = function(df, x, weights){
   return(ggplot(df, aes({{x}}))+geom_bar(aes(weight = {{weights}}, y = (..count..)/sum(..count..))))}
 
