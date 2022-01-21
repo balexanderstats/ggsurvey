@@ -1,5 +1,6 @@
 #' Weighted Box Plot of One Variable
 #'
+#' In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 #' @param df data frame
 #' @param x first variable of interest
 #' @param weights survey weights that sums to sample size
@@ -17,6 +18,7 @@ ggboxweight = function(df, x, weights){
   return(ggplot(df, aes({{x}}))+geom_boxplot(aes(weight = {{weights}})))}
 #' Weighted Box Plot of svy.design object
 #'
+#' In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 #' @param surveyobj svy.design object
 #' @param x variable to boxplot
 #'
@@ -38,6 +40,7 @@ ggboxweight_svy = function(surveyobj, x){
 
 #' Weighted Boxplot with a categorical variable
 #'
+#' In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 #' @param df data frame
 #' @param x numeric variable of interest
 #' @param y categorical variable of interest
@@ -55,6 +58,7 @@ ggboxweight2d = function(df, x, y, weights){
 
 #' Weighted Boxplot of a survey object with a categorical variable
 #'
+#' In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 #' @param surveyobj svy.design object
 #' @param x variable to boxplot
 #' @param y categorical variable
@@ -76,6 +80,7 @@ ggboxweight2d_svy = function(surveyobj, x, y){
 
 #' Weighted Boxplot with a categorical x axis and a faceting variable
 #'
+#' In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 #' @param df data frame
 #' @param x first categorical variable of interest
 #' @param y numeric variable of interest
@@ -94,6 +99,7 @@ ggboxweight3d = function(df, x, y, z, weights){
 
 #' Weighted Boxplot of svy.design object with two categorical variables
 #'
+#' In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 #' @param surveyobj svy.design
 #' @param x variable to boxplot
 #' @param y first categorical variable

@@ -19,7 +19,7 @@ ggbarcrosstabs(df, x, y, weights)
 ggplot object that can be customized using ggplot2 functions including adding titles
 }
 \description{
-Crosstabs of Two Variables
+In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 }
 \examples{
 library(survey)

@@ -15,7 +15,7 @@ ggbarweight_svy(surveyobj, x)
 ggplot object
 }
 \description{
-Bar Chart from svydesign objects
+In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 }
 \examples{
 library(survey)

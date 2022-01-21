@@ -21,7 +21,7 @@ ggboxweight3d(df, x, y, z, weights)
 
 }
 \description{
-Weighted Boxplot with a categorical x axis and a faceting variable
+In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 }
 \examples{
 library(survey)

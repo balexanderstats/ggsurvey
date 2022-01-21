@@ -21,7 +21,7 @@ ggbarcrosstabs3d(df, x, y, z, weights)
 
 }
 \description{
-Crosstabs of Three Variables
+In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 }
 \examples{
 library(survey)

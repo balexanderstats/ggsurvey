@@ -2,7 +2,8 @@
 % Please edit documentation in R/histograms.R
 \name{gghistweight2d}
 \alias{gghistweight2d}
-\title{Weighted Histogram with One Facet}
+\title{Weighted Histogram with One Facet
+In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.}
 \usage{
 gghistweight2d(df, x, y, weights, binwidth = NULL)
 }
@@ -22,6 +23,7 @@ gghistweight2d(df, x, y, weights, binwidth = NULL)
 }
 \description{
 Weighted Histogram with One Facet
+In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 }
 \examples{
 library(survey)

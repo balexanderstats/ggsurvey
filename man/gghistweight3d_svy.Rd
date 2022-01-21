@@ -21,7 +21,7 @@ gghistweight3d_svy(surveyobj, x, y, z, binwidth = NULL)
 
 }
 \description{
-Histogram of svy.design object with two facets
+In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 }
 \examples{
 library(survey)

@@ -15,7 +15,7 @@ ggboxweight_svy(surveyobj, x)
 ggplot boxplot
 }
 \description{
-Weighted Box Plot of svy.design object
+In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 }
 \examples{
 library(survey)

@@ -17,13 +17,13 @@ gghexweight3d(df, x, y, a, b, weights)
 
 \item{b}{second faceting variable}
 
-\item{weights}{desired binwidth, if NULL bins in geom_histogram defaults to 30}
+\item{weights}{name of weights variable}
 }
 \value{
-
+ggplot
 }
 \description{
-Weighted Box Plot with Two Facet Variables
+In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 }
 \examples{
 data(api)

@@ -19,7 +19,7 @@ gghistweight(df, x, weights, binwidth = NULL)
 
 }
 \description{
-Weighted Histogram
+In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 }
 \examples{
 library(survey)

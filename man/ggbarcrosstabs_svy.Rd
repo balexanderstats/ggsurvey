@@ -17,7 +17,7 @@ ggbarcrosstabs_svy(surveyobj, x, y)
 
 }
 \description{
-Crosstabs for svy.design objects
+In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 }
 \examples{
 library(survey)

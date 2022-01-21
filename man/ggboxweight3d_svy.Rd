@@ -19,7 +19,7 @@ ggboxweight3d_svy(surveyobj, x, y, z)
 
 }
 \description{
-Weighted Boxplot of svy.design object with two categorical variables
+In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 }
 \examples{
 library(survey)

@@ -16,10 +16,10 @@ gghexweight2d_svy(surveyobj, x, y, z)
 \item{z}{faceting variable}
 }
 \value{
-
+ggplot
 }
 \description{
-Weighted Hex Plot of svy.design with One Facet Variable
+In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 }
 \examples{
 library(survey)

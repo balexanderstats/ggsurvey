@@ -17,7 +17,7 @@ ggboxweight(df, x, weights)
 
 }
 \description{
-Weighted Box Plot of One Variable
+In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 }
 \examples{
 library(survey)

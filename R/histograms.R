@@ -1,5 +1,6 @@
 #' Weighted Histogram
 #'
+#'In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 #' @param df data frame
 #' @param x variable of interest
 #' @param weights survey weights that sum to sample size
@@ -28,6 +29,7 @@ gghistweight = function(df, x, weights, binwidth = NULL){
 
 #' Histogram of svgdesign object
 #'
+#'In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 #' @param surveyobj svy.design object
 #' @param x variable to histogram
 #' @param binwidth binwidth to pass to geom_hist
@@ -54,7 +56,8 @@ gghistweight_svy = function(surveyobj, x, binwidth = NULL){
 }
 
 #' Weighted Histogram with One Facet
-#'
+
+#'In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 #' @param df data frame
 #' @param x first variable of interest
 #' @param y categorical variable for faceting
@@ -82,6 +85,7 @@ gghistweight2d = function(df, x, y, weights, binwidth = NULL){
 
 #' Histogram of svy.object with One Facet
 #'
+#'In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 #' @param surveyobj svy.design object
 #' @param x variable to histogram
 #' @param y categorical variable to facet
@@ -109,6 +113,7 @@ gghistweight2d_svy = function(surveyobj, x, y, binwidth = NULL){
 }
 #' Weighted Histogram with Two Facets
 #'
+#'In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 #' @param df data frame
 #' @param x first variable of interest
 #' @param y first categorical variable for faceting
@@ -135,6 +140,7 @@ gghistweight3d = function(df, x, y, z, weights, binwidth = NULL){
 }
 #' Histogram of svy.design object with two facets
 #'
+#' In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 #' @param surveyobj svy.design object
 #' @param x variable to histogram
 #' @param y horizontal facet

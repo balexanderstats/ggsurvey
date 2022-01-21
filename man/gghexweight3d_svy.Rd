@@ -21,7 +21,7 @@ gghexweight3d_svy(surveyobj, x, y, a, b)
 
 }
 \description{
-Weighted Hex Plot of svy.design with Two Faceting Variables
+In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 }
 \examples{
 library(survey)

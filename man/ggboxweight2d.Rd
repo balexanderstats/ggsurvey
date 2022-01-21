@@ -19,7 +19,7 @@ ggboxweight2d(df, x, y, weights)
 
 }
 \description{
-Weighted Boxplot with a categorical variable
+In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 }
 \examples{
 library(survey)

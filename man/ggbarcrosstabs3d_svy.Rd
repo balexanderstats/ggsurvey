@@ -19,7 +19,7 @@ ggbarcrosstabs3d_svy(surveyobj, x, y, z)
 
 }
 \description{
-Crosstabs of Three Variables Using svy.design object
+In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 }
 \examples{
 library(survey)

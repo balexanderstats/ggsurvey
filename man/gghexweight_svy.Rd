@@ -17,7 +17,7 @@ gghexweight_svy(surveyobj, x, y)
 
 }
 \description{
-Weighted Hex Plot of Survey Design Object
+In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 }
 \examples{
 library(survey)

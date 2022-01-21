@@ -23,7 +23,7 @@ gghistweight3d(df, x, y, z, weights, binwidth = NULL)
 
 }
 \description{
-Weighted Histogram with Two Facets
+In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 }
 \examples{
 library(survey)

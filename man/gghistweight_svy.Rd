@@ -17,7 +17,7 @@ gghistweight_svy(surveyobj, x, binwidth = NULL)
 
 }
 \description{
-Histogram of svgdesign object
+In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 }
 \examples{
 library(survey)

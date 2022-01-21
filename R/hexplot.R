@@ -1,9 +1,10 @@
 #' Weighted Hex Plot
 #'
+#' In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 #' @param df data frame
 #' @param x name of variable for x axis
 #' @param y name of variable for y axis
-#' @param weights desired binwidth, if NULL bins in geom_histogram defaults to 30
+#' @param weights name of weights variable
 #'
 #' @return
 #' @export
@@ -18,6 +19,7 @@ gghexweight = function(df, x, y, weights){
 
 #' Weighted Hex Plot of Survey Design Object
 #'
+#' In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 #' @param surveyobj svy.design
 #' @param x name of variable for x axis
 #' @param y name of variable for y axis
@@ -38,13 +40,14 @@ gghexweight_svy = function(surveyobj, x, y){
 
 #' Weighted Hex Plot with One Facet Variable
 #'
+#' In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 #' @param df data frame
 #' @param x name of variable for x axis
 #' @param y name of variable for y axis
 #' @param z faceting categorical variable
-#' @param weights desired binwidth, if NULL bins in geom_histogram defaults to 30
+#' @param weights name of weights variable
 #'
-#' @return
+#' @return ggplot
 #' @export
 #'
 #' @examples
@@ -57,12 +60,13 @@ gghexweight2d = function(df, x, y, z, weights){
 
 #' Weighted Hex Plot of svy.design with One Facet Variable
 #'
+#' In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 #' @param surveyobj svy.design
 #' @param x variable for x axis
 #' @param y variable for y axis
 #' @param z faceting variable
 #'
-#' @return
+#' @return ggplot
 #' @export
 #'
 #' @examples
@@ -77,14 +81,15 @@ gghexweight2d_svy = function(surveyobj, x,y, z){
 }
 #' Weighted Box Plot with Two Facet Variables
 #'
+#' In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 #' @param df data frame
 #' @param x name of variable for x axis
 #' @param y name of variable for y axis
 #' @param a first faceting variable
 #' @param b second faceting variable
-#' @param weights desired binwidth, if NULL bins in geom_histogram defaults to 30
+#' @param weights name of weights variable
 #'
-#' @return
+#' @return ggplot
 #' @export
 #'
 #' @examples
@@ -97,6 +102,7 @@ gghexweight3d = function(df, x, y, a, b, weights){
 
 #' Weighted Hex Plot of svy.design with Two Faceting Variables
 #'
+#' In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 #' @param surveyobj svy.design
 #' @param x variable for x axis
 #' @param y variable for y axis

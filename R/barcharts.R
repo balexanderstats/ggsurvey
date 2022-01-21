@@ -1,5 +1,6 @@
 #' Weighted Univariate Bar Charts
 #'
+#' In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 #' @param df data frame of survey
 #' @param x  name of question of interest
 #' @param weights survey weights that sums to sample size
@@ -21,6 +22,7 @@ ggbarweight = function(df, x, weights){
 
 #' Bar Chart from svydesign objects
 #'
+#'In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 #' @param surveyobj svydesign
 #' @param x variable to plot
 #'
@@ -43,6 +45,7 @@ ggbarweight_svy = function(surveyobj, x){
 
 #' Crosstabs of Two Variables
 #'
+#'In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 #' @param df data frame of survey
 #' @param x variable to bar chart
 #' @param y faceting variable
@@ -66,6 +69,7 @@ ggbarcrosstabs = function(df, x, y, weights){
 
 #' Crosstabs for svy.design objects
 #'
+#'In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 #' @param svyobj svy.design
 #' @param x variable for bar chart
 #' @param y faceting variable (comparison factor)
@@ -92,6 +96,7 @@ ggbarcrosstabs_svy = function(surveyobj, x, y){
 
 #' Crosstabs of Three Variables
 #'
+#'In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 #' @param df data frame
 #' @param x bar chart variable
 #' @param y crosstab variable 1 (horizontal facets)
@@ -116,6 +121,7 @@ ggbarcrosstabs3d = function(df, x, y, z, weights){
 
 #' Crosstabs of Three Variables Using svy.design object
 #'
+#'In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 #' @param surveyobj svy.design obj
 #' @param x bar chart variable
 #' @param y crosstab variable 1 (horizontal facets)

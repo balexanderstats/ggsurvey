@@ -17,7 +17,7 @@ ggbarweight(df, x, weights)
 ggplot object that can be customized using ggplot2 functions including adding titles
 }
 \description{
-Weighted Univariate Bar Charts
+In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 }
 \examples{
 library(survey)
