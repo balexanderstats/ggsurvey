@@ -15,4 +15,4 @@ Future Functionality:
 2. Adding more seamless error bars.
 
 Known issues: 
-1. Import of required pacakges: ggplot2, survey, hexbin are not automatic.
+1. Import of required pacakges: ggplot2, survey, hexbin, dplyr, are not automatic.
