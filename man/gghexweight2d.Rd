@@ -13,7 +13,7 @@ gghexweight2d(df, x, y, z, weights)
 
 \item{y}{name of variable for y axis}
 
-\item{z}{faceting variable}
+\item{z}{faceting categorical variable}
 
 \item{weights}{desired binwidth, if NULL bins in geom_histogram defaults to 30}
 }
@@ -22,4 +22,8 @@ gghexweight2d(df, x, y, z, weights)
 }
 \description{
 Weighted Hex Plot with One Facet Variable
+}
+\examples{
+data(api)
+gghexweight2d(apistrat, api99, api00, stype, pw)
 }

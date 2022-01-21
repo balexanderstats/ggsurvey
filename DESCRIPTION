@@ -7,6 +7,6 @@ Maintainer: Brittany Alexander <brittanyalexander1337@gmail.com>
 Description: This package provides code to make plots of weighted survey data
 License: GPL (>= 2)
 Encoding: UTF-8
-Imports: ggplot2, stats, dplyr, survey
+Imports: ggplot2, stats, dplyr, survey, hexbin
 LazyData: true
 RoxygenNote: 7.1.2

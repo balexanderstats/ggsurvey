@@ -21,3 +21,7 @@ gghexweight(df, x, y, weights)
 \description{
 Weighted Hex Plot
 }
+\examples{
+data(api)
+gghexweight(apistrat, api99, api00, pw)
+}

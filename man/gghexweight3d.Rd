@@ -25,3 +25,7 @@ gghexweight3d(df, x, y, a, b, weights)
 \description{
 Weighted Box Plot with Two Facet Variables
 }
+\examples{
+data(api)
+gghexweight3d(apistrat, api99, api00, stype, awards, pw)
+}
