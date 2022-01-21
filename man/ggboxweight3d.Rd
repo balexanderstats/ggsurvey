@@ -2,7 +2,7 @@
 % Please edit documentation in R/boxplots.R
 \name{ggboxweight3d}
 \alias{ggboxweight3d}
-\title{Weighted Box Plot with a categorical x axis and a faceting variable}
+\title{Weighted Boxplot with a categorical x axis and a faceting variable}
 \usage{
 ggboxweight3d(df, x, y, z, weights)
 }
@@ -21,11 +21,10 @@ ggboxweight3d(df, x, y, z, weights)
 
 }
 \description{
-Weighted Box Plot with a categorical x axis and a faceting variable
+Weighted Boxplot with a categorical x axis and a faceting variable
 }
 \examples{
 library(survey)
 data(api)
 ggboxweight3d(apistrat, api00, stype,awards, pw)
-ggboxweight3d(apistrat, api00, stype, awards, pw, binwidth = 10)
 }

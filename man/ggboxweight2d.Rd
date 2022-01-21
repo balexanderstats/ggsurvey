@@ -2,7 +2,7 @@
 % Please edit documentation in R/boxplots.R
 \name{ggboxweight2d}
 \alias{ggboxweight2d}
-\title{Weighted Box Plot with a categorical variable}
+\title{Weighted Boxplot with a categorical variable}
 \usage{
 ggboxweight2d(df, x, y, weights)
 }
@@ -19,7 +19,7 @@ ggboxweight2d(df, x, y, weights)
 
 }
 \description{
-Weighted Box Plot with a categorical variable
+Weighted Boxplot with a categorical variable
 }
 \examples{
 library(survey)
