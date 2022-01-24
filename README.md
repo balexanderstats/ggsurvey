@@ -22,5 +22,4 @@ Future Functionality:
 2. Adding functions for error bars on various graphs.
 
 Known issues: 
-1. Import of required pacakges: ggplot2, survey, hexbin, dplyr, are not automatic.
-
+None
