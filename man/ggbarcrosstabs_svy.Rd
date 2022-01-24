@@ -25,6 +25,6 @@ data(api)
 dstrat<-svydesign(id=~1,strata=~stype, weights=~pw, data=apistrat, fpc=~fpc)
 ggbarcrosstabs_svy(dstrat, stype, yr.rnd)+ylab("Proportion")
 data(nhanes)
-design <- svydesign(id=~SDMVPSU, strata=~SDMVSTRA, weights=~WTMEC2YR, nest=TRUE,data=nhanes)+ylab("Proportion")
+design <- svydesign(id=~SDMVPSU, strata=~SDMVSTRA, weights=~WTMEC2YR, nest=TRUE,data=nhanes)
 ggbarcrosstabs_svy(design, race, agecat)
 }

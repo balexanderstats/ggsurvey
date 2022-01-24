@@ -35,8 +35,8 @@ ggbarweight = function(df, x, weights){
 #' dstrat<-svydesign(id=~1,strata=~stype, weights=~pw, data=apistrat, fpc=~fpc)
 #' ggbarweight_svy(dstrat, stype)+ylab("Proportion")
 #' data(nhanes)
-#' design <- svydesign(id=~SDMVPSU, strata=~SDMVSTRA, weights=~WTMEC2YR, nest=TRUE,data=nhanes)+ylab("Proportion")
-#' ggbarweight_svy(design, race)
+#' design <- svydesign(id=~SDMVPSU, strata=~SDMVSTRA, weights=~WTMEC2YR, nest=TRUE,data=nhanes)
+#' ggbarweight_svy(design, race)+ylab("Proportion)
 ggbarweight_svy = function(surveyobj, x){
   df = surveyobj$variables
   weights = weights(surveyobj)
@@ -45,7 +45,8 @@ ggbarweight_svy = function(surveyobj, x){
 
 #' Crosstabs of Two Variables
 #'
-#'In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
+#' In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
+#' This function creates a crosstab of x by a second variable y.
 #' @param df data frame of survey
 #' @param x variable to bar chart
 #' @param y faceting variable
@@ -53,7 +54,7 @@ ggbarweight_svy = function(surveyobj, x){
 #'
 #' @return ggplot object that can be customized using ggplot2 functions including adding titles
 #' @export
-#'This function creates a crosstab of x by a second variable y
+#'
 #' @examples
 #' library(survey)
 #' data(api)
@@ -83,12 +84,13 @@ ggbarcrosstabs = function(df, x, y, weights){
 #' dstrat<-svydesign(id=~1,strata=~stype, weights=~pw, data=apistrat, fpc=~fpc)
 #' ggbarcrosstabs_svy(dstrat, stype, yr.rnd)+ylab("Proportion")
 #' data(nhanes)
-#' design <- svydesign(id=~SDMVPSU, strata=~SDMVSTRA, weights=~WTMEC2YR, nest=TRUE,data=nhanes)+ylab("Proportion")
+#' design <- svydesign(id=~SDMVPSU, strata=~SDMVSTRA, weights=~WTMEC2YR, nest=TRUE,data=nhanes)
 #' ggbarcrosstabs_svy(design, race, agecat)
+
 ggbarcrosstabs_svy = function(surveyobj, x, y){
   df = surveyobj$variables
   df$weights = weights(surveyobj)
-  newdf = df %>% group_by({{y}},{{x}})  %>% tally(, wt = {{weights}}) %>% mutate(f = n/sum(n))
+  newdf = df %>% group_by({{y}},{{x}})  %>% tally(, wt = weights) %>% mutate(f = n/sum(n))
   plotnew = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f))+facet_grid(cols = vars({{y}}))
   return(plotnew)
 }

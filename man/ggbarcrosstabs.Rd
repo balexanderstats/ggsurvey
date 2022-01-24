@@ -20,6 +20,7 @@ ggplot object that can be customized using ggplot2 functions including adding ti
 }
 \description{
 In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
+This function creates a crosstab of x by a second variable y.
 }
 \examples{
 library(survey)

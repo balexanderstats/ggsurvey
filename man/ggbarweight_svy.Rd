@@ -17,12 +17,3 @@ ggplot object
 \description{
 In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 }
-\examples{
-library(survey)
-data(api)
-dstrat<-svydesign(id=~1,strata=~stype, weights=~pw, data=apistrat, fpc=~fpc)
-ggbarweight_svy(dstrat, stype)+ylab("Proportion")
-data(nhanes)
-design <- svydesign(id=~SDMVPSU, strata=~SDMVSTRA, weights=~WTMEC2YR, nest=TRUE,data=nhanes)+ylab("Proportion")
-ggbarweight_svy(design, race)
-}
