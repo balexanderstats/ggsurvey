@@ -57,7 +57,7 @@ ggbarweight_svy = function(surveyobj, x){
 #' @examples
 #' library(survey)
 #' data(api)
-#' ggbarcrosstabs(apistrat, stype, yr.rnd, pw)
+#' ggbarcrosstabs(apistrat, stype, yr.rnd, pw)+ylab("Proportion")+ggtitle("School Type by Year Round Status using api From survey Package")+xlab("Type of School E=Elementary, M=Middle School, H=High School")
 #' data(nhanes)
 #' ggbarcrosstabs(nhanes, race, agecat, WTMEC2YR)
 ggbarcrosstabs = function(df, x, y, weights){

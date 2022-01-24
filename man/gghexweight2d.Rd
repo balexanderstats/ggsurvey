@@ -15,13 +15,13 @@ gghexweight2d(df, x, y, z, weights)
 
 \item{z}{faceting categorical variable}
 
-\item{weights}{desired binwidth, if NULL bins in geom_histogram defaults to 30}
+\item{weights}{name of weights variable}
 }
 \value{
-
+ggplot
 }
 \description{
-Weighted Hex Plot with One Facet Variable
+In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 }
 \examples{
 data(api)
