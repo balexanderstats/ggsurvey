@@ -4,17 +4,19 @@
 \alias{ggbarcrosstabs_svy}
 \title{Crosstabs for svy.design objects}
 \usage{
-ggbarcrosstabs_svy(surveyobj, x, y)
+ggbarcrosstabs_svy(surveyobj, x, y, fill = NULL)
 }
 \arguments{
+\item{surveyobj}{svy.design obj}
+
 \item{x}{variable for bar chart}
 
 \item{y}{faceting variable (comparison factor)}
 
-\item{svyobj}{svy.design}
+\item{fill}{if true the fill of each bar will be a different color corresponding to the level of the factor}
 }
 \value{
-
+ggplot object
 }
 \description{
 In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
@@ -24,6 +26,7 @@ library(survey)
 data(api)
 dstrat<-svydesign(id=~1,strata=~stype, weights=~pw, data=apistrat, fpc=~fpc)
 ggbarcrosstabs_svy(dstrat, stype, yr.rnd)+ylab("Proportion")
+ggbarcrosstabs_svy(dstrat, stype, yr.rnd, TRUE)+ylab("Proportion")
 data(nhanes)
 design <- svydesign(id=~SDMVPSU, strata=~SDMVSTRA, weights=~WTMEC2YR, nest=TRUE,data=nhanes)
 ggbarcrosstabs_svy(design, race, agecat)

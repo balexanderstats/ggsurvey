@@ -14,7 +14,7 @@ gghexweight_svy(surveyobj, x, y)
 \item{y}{name of variable for y axis}
 }
 \value{
-
+ggplot object
 }
 \description{
 In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.

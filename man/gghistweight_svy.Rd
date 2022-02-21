@@ -14,7 +14,7 @@ gghistweight_svy(surveyobj, x, binwidth = NULL)
 \item{binwidth}{binwidth to pass to geom_hist}
 }
 \value{
-
+ggplot object
 }
 \description{
 In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.

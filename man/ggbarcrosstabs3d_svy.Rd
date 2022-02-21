@@ -4,7 +4,7 @@
 \alias{ggbarcrosstabs3d_svy}
 \title{Crosstabs of Three Variables Using svy.design object}
 \usage{
-ggbarcrosstabs3d_svy(surveyobj, x, y, z)
+ggbarcrosstabs3d_svy(surveyobj, x, y, z, fill = NULL)
 }
 \arguments{
 \item{surveyobj}{svy.design obj}
@@ -14,9 +14,11 @@ ggbarcrosstabs3d_svy(surveyobj, x, y, z)
 \item{y}{crosstab variable 1 (horizontal facets)}
 
 \item{z}{crosstab variable 2 (vertical facets)}
+
+\item{fill}{if true the fill of each bar will be a different color corresponding to the level of the factor}
 }
 \value{
-
+ggplot object
 }
 \description{
 In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
@@ -26,7 +28,8 @@ library(survey)
 data(api)
 dstrat<-svydesign(id=~1,strata=~stype, weights=~pw, data=apistrat, fpc=~fpc)
 ggbarcrosstabs3d_svy(dstrat, stype, yr.rnd, awards)
+ggbarcrosstabs3d_svy(dstrat, stype, yr.rnd, awards, fill = TRUE)
 data(nhanes)
-design <- svydesign(id=~SDMVPSU, strata=~SDMVSTRA, weights=~WTMEC2YR, nest=TRUE,data=nhanes)+ylab("Proportion")
+design <- svydesign(id=~SDMVPSU, strata=~SDMVSTRA, weights=~WTMEC2YR, nest=TRUE,data=nhanes)
 ggbarcrosstabs3d_svy(design, race, agecat, RIAGENDR)
 }

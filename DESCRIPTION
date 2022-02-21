@@ -1,12 +1,13 @@
 Package: ggsurvey
 Type: Package
 Title: ggplot2 for Survey Data
-Version: 0.1.0
+Version: 0.1.1
 Author: Brittany Alexander
 Maintainer: Brittany Alexander <brittanyalexander1337@gmail.com>
-Description: This package provides code to make plots of weighted survey data
-License: GPL (>= 2)
+Description: This package provides code to make plots of weighted survey data using ggplot2.
+License: MIT + file LICENSE
 Encoding: UTF-8
-Imports: ggplot2, stats, dplyr, survey, hexbin
+Depends: R (>= 3.3), ggplot2, survey, hexbin, dplyr 
+Imports: stats
 LazyData: true
 RoxygenNote: 7.1.2

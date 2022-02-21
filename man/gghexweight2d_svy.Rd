@@ -16,7 +16,7 @@ gghexweight2d_svy(surveyobj, x, y, z)
 \item{z}{faceting variable}
 }
 \value{
-ggplot
+ggplot object
 }
 \description{
 In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.

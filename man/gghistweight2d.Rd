@@ -19,7 +19,7 @@ gghistweight2d(df, x, y, weights, binwidth = NULL)
 \item{binwidth}{desired binwidth, if NULL bins in geom_histogram defaults to 30}
 }
 \value{
-
+ggplot object
 }
 \description{
 Weighted Histogram with One Facet

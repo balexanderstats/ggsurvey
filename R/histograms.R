@@ -6,7 +6,7 @@
 #' @param weights survey weights that sum to sample size
 #' @param binwidth desired binwidth, if NULL bins in geom_histogram defaults to 30
 #'
-#' @return
+#' @return ggplot object
 #' @export
 #'
 #' @examples
@@ -34,7 +34,7 @@ gghistweight = function(df, x, weights, binwidth = NULL){
 #' @param x variable to histogram
 #' @param binwidth binwidth to pass to geom_hist
 #'
-#' @return
+#' @return ggplot object
 #' @export
 #'
 #' @examples
@@ -64,7 +64,7 @@ gghistweight_svy = function(surveyobj, x, binwidth = NULL){
 #' @param weights survey weights that sum to sample size
 #' @param binwidth desired binwidth, if NULL bins in geom_histogram defaults to 30
 #'
-#' @return
+#' @return ggplot object
 #' @export
 #'
 #' @examples
@@ -91,7 +91,7 @@ gghistweight2d = function(df, x, y, weights, binwidth = NULL){
 #' @param y categorical variable to facet
 #' @param binwidth binwidth to pass to geom_hist
 #'
-#' @return
+#' @return ggplot object
 #' @export
 #'
 #' @examples
@@ -121,7 +121,7 @@ gghistweight2d_svy = function(surveyobj, x, y, binwidth = NULL){
 #' @param weights survey weights that sum to sample size
 #' @param binwidth desired binwidth, if NULL bins in geom_histogram defaults to 30
 #'
-#' @return
+#' @return ggplot object
 #' @export
 #'
 #' @examples
@@ -147,7 +147,7 @@ gghistweight3d = function(df, x, y, z, weights, binwidth = NULL){
 #' @param z vertical facet
 #' @param binwidth binwidth to pass to geom_hist
 #'
-#' @return
+#' @return ggplot object
 #' @export
 #'
 #' @examples

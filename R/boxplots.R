@@ -5,7 +5,7 @@
 #' @param x first variable of interest
 #' @param weights survey weights that sums to sample size
 #'
-#' @return
+#' @return ggplot object
 #' @export
 #'
 #' @examples
@@ -22,7 +22,7 @@ ggboxweight = function(df, x, weights){
 #' @param surveyobj svy.design object
 #' @param x variable to boxplot
 #'
-#' @return ggplot boxplot
+#' @return ggplot object
 #' @export
 #'
 #' @examples
@@ -46,7 +46,7 @@ ggboxweight_svy = function(surveyobj, x){
 #' @param y categorical variable of interest
 #' @param weights survey weights that sums to sample size
 #'
-#' @return
+#' @return ggplot object
 #' @export
 #'
 #' @examples
@@ -63,7 +63,7 @@ ggboxweight2d = function(df, x, y, weights){
 #' @param x variable to boxplot
 #' @param y categorical variable
 #'
-#' @return
+#' @return ggplot object
 #' @export
 #'
 #' @examples
@@ -87,7 +87,7 @@ ggboxweight2d_svy = function(surveyobj, x, y){
 #' @param z second variable of interest for faceting
 #' @param weights survey weights that sums to sample size
 #'
-#' @return
+#' @return ggplot object
 #' @export
 #'
 #' @examples
@@ -105,7 +105,7 @@ ggboxweight3d = function(df, x, y, z, weights){
 #' @param y first categorical variable
 #' @param z second categorical variable (for faceting)
 #'
-#' @return
+#' @return ggplot object
 #' @export
 #'
 #' @examples

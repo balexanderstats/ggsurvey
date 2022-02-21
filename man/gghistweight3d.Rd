@@ -20,7 +20,7 @@ gghistweight3d(df, x, y, z, weights, binwidth = NULL)
 \item{binwidth}{desired binwidth, if NULL bins in geom_histogram defaults to 30}
 }
 \value{
-
+ggplot object
 }
 \description{
 In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.

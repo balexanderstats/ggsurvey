@@ -12,7 +12,7 @@ ggboxweight_svy(surveyobj, x)
 \item{x}{variable to boxplot}
 }
 \value{
-ggplot boxplot
+ggplot object
 }
 \description{
 In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.

@@ -4,7 +4,7 @@
 \alias{ggbarweight}
 \title{Weighted Univariate Bar Charts}
 \usage{
-ggbarweight(df, x, weights)
+ggbarweight(df, x, weights, fill = NULL)
 }
 \arguments{
 \item{df}{data frame of survey}
@@ -12,9 +12,11 @@ ggbarweight(df, x, weights)
 \item{x}{name of question of interest}
 
 \item{weights}{survey weights that sums to sample size}
+
+\item{fill}{if true the fill of each bar will be a different color corresponding to the level of the factor}
 }
 \value{
-ggplot object that can be customized using ggplot2 functions including adding titles
+ggplot object
 }
 \description{
 In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
@@ -24,6 +26,7 @@ library(survey)
 #Example with data frame
 data(api)
 ggbarweight(apistrat, stype, pw)+ggtitle("Proportion of School Type")+ylab("Proportion")
+ggbarweight(apistrat, stype, pw, fill = TRUE)+ggtitle("Proportion of School Type")+ylab("Proportion")
 data(nhanes)
 ggbarweight(nhanes, race, WTMEC2YR)+ylab("Proportion")
 }

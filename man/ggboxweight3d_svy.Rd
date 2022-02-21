@@ -16,7 +16,7 @@ ggboxweight3d_svy(surveyobj, x, y, z)
 \item{z}{second categorical variable (for faceting)}
 }
 \value{
-
+ggplot object
 }
 \description{
 In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.

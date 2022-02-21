@@ -18,7 +18,7 @@ ggboxweight3d(df, x, y, z, weights)
 \item{weights}{survey weights that sums to sample size}
 }
 \value{
-
+ggplot object
 }
 \description{
 In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.

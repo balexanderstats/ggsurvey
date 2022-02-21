@@ -4,16 +4,29 @@
 \alias{ggbarweight_svy}
 \title{Bar Chart from svydesign objects}
 \usage{
-ggbarweight_svy(surveyobj, x)
+ggbarweight_svy(surveyobj, x, fill = NULL)
 }
 \arguments{
 \item{surveyobj}{svydesign}
 
 \item{x}{variable to plot}
+
+\item{fill}{if true the fill of each bar will be a different color corresponding to the level of the factor}
 }
 \value{
 ggplot object
 }
 \description{
 In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
+}
+\examples{
+library(survey)
+data(api)
+dstrat<-svydesign(id=~1,strata=~stype, weights=~pw, data=apistrat, fpc=~fpc)
+ggbarweight_svy(dstrat, stype)+ylab("Proportion")
+ggbarweight_svy(dstrat, stype, fill = TRUE)
+data(nhanes)
+design <- svydesign(id=~SDMVPSU, strata=~SDMVSTRA, weights=~WTMEC2YR, nest=TRUE,data=nhanes)
+ggbarweight_svy(design, race)+ylab("Proportion")
+ggbarweight_svy(design, race, fill = TRUE)+ylab("Proportion")
 }

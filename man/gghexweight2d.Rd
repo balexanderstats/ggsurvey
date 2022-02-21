@@ -18,7 +18,7 @@ gghexweight2d(df, x, y, z, weights)
 \item{weights}{name of weights variable}
 }
 \value{
-ggplot
+ggplot object
 }
 \description{
 In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.

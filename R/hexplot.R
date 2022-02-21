@@ -6,7 +6,7 @@
 #' @param y name of variable for y axis
 #' @param weights name of weights variable
 #'
-#' @return
+#' @return ggplot object
 #' @export
 #'
 #' @examples
@@ -24,7 +24,7 @@ gghexweight = function(df, x, y, weights){
 #' @param x name of variable for x axis
 #' @param y name of variable for y axis
 #'
-#' @return
+#' @return ggplot object
 #' @export
 #'
 #' @examples
@@ -47,7 +47,7 @@ gghexweight_svy = function(surveyobj, x, y){
 #' @param z faceting categorical variable
 #' @param weights name of weights variable
 #'
-#' @return ggplot
+#' @return ggplot object
 #' @export
 #'
 #' @examples
@@ -66,7 +66,7 @@ gghexweight2d = function(df, x, y, z, weights){
 #' @param y variable for y axis
 #' @param z faceting variable
 #'
-#' @return ggplot
+#' @return ggplot object
 #' @export
 #'
 #' @examples
@@ -89,7 +89,7 @@ gghexweight2d_svy = function(surveyobj, x,y, z){
 #' @param b second faceting variable
 #' @param weights name of weights variable
 #'
-#' @return ggplot
+#' @return ggplot object
 #' @export
 #'
 #' @examples
@@ -109,7 +109,7 @@ gghexweight3d = function(df, x, y, a, b, weights){
 #' @param a horizontal facetting variable
 #' @param b vertical facetting variable
 #'
-#' @return
+#' @return ggplot object
 #' @export
 #'
 #' @examples

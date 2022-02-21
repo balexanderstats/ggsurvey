@@ -4,7 +4,7 @@
 \alias{ggbarcrosstabs}
 \title{Crosstabs of Two Variables}
 \usage{
-ggbarcrosstabs(df, x, y, weights)
+ggbarcrosstabs(df, x, y, weights, fill = NULL)
 }
 \arguments{
 \item{df}{data frame of survey}
@@ -14,9 +14,11 @@ ggbarcrosstabs(df, x, y, weights)
 \item{y}{faceting variable}
 
 \item{weights}{survey weights that sum to sample size}
+
+\item{fill}{if true the fill of each bar will be a different color corresponding to the level of the factor}
 }
 \value{
-ggplot object that can be customized using ggplot2 functions including adding titles
+ggplot object
 }
 \description{
 In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
@@ -26,6 +28,7 @@ This function creates a crosstab of x by a second variable y.
 library(survey)
 data(api)
 ggbarcrosstabs(apistrat, stype, yr.rnd, pw)+ylab("Proportion")+ggtitle("School Type by Year Round Status using api From survey Package")+xlab("Type of School E=Elementary, M=Middle School, H=High School")
+ggbarcrosstabs(apistrat, stype, yr.rnd, pw, fill = TRUE)+ylab("Proportion")+ggtitle("School Type by Year Round Status using api From survey Package")+xlab("Type of School E=Elementary, M=Middle School, H=High School")
 data(nhanes)
 ggbarcrosstabs(nhanes, race, agecat, WTMEC2YR)
 }
