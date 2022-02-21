@@ -25,8 +25,8 @@ In ggsurvey you specify both the plotting variables and weights in plain text wi
 library(survey)
 #Example with data frame
 data(api)
-ggbarweight(apistrat, stype, pw)+ggtitle("Proportion of School Type")+ylab("Proportion")
-ggbarweight(apistrat, stype, pw, fill = TRUE)+ggtitle("Proportion of School Type")+ylab("Proportion")
+ggbarweight(apistrat, stype, pw)
+ggbarweight(apistrat, stype, pw, fill = TRUE)
 data(nhanes)
 ggbarweight(nhanes, race, WTMEC2YR)+ylab("Proportion")
 }

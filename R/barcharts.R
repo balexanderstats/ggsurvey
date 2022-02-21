@@ -14,8 +14,8 @@
 #' library(survey)
 #' #Example with data frame
 #' data(api)
-#' ggbarweight(apistrat, stype, pw)+ggtitle("Proportion of School Type")+ylab("Proportion")
-#' ggbarweight(apistrat, stype, pw, fill = TRUE)+ggtitle("Proportion of School Type")+ylab("Proportion")
+#' ggbarweight(apistrat, stype, pw)
+#' ggbarweight(apistrat, stype, pw, fill = TRUE)
 #' data(nhanes)
 #' ggbarweight(nhanes, race, WTMEC2YR)+ylab("Proportion")
 ggbarweight = function(df, x, weights, fill = NULL){
@@ -52,7 +52,7 @@ ggbarweight = function(df, x, weights, fill = NULL){
 #' ggbarweight_svy(design, race, fill = TRUE)+ylab("Proportion")
 ggbarweight_svy = function(surveyobj, x, fill = NULL){
   df = surveyobj$variables
-  wts = weights(surveyobj)
+  wts = stats::weights(surveyobj)
   if(is.null(fill)){
     plot = ggplot(df, aes({{x}}))+geom_bar(aes(weight = {{wts}}, y = (..count..)/sum(..count..)))
   }
@@ -78,8 +78,8 @@ ggbarweight_svy = function(surveyobj, x, fill = NULL){
 #' @examples
 #' library(survey)
 #' data(api)
-#' ggbarcrosstabs(apistrat, stype, yr.rnd, pw)+ylab("Proportion")+ggtitle("School Type by Year Round Status using api From survey Package")+xlab("Type of School E=Elementary, M=Middle School, H=High School")
-#' ggbarcrosstabs(apistrat, stype, yr.rnd, pw, fill = TRUE)+ylab("Proportion")+ggtitle("School Type by Year Round Status using api From survey Package")+xlab("Type of School E=Elementary, M=Middle School, H=High School")
+#' ggbarcrosstabs(apistrat, stype, yr.rnd, pw)+ylab("Proportion")
+#' ggbarcrosstabs(apistrat, stype, yr.rnd, pw, fill = TRUE)+ylab("Proportion")
 #' data(nhanes)
 #' ggbarcrosstabs(nhanes, race, agecat, WTMEC2YR)
 ggbarcrosstabs = function(df, x, y, weights, fill = NULL){
@@ -118,7 +118,7 @@ ggbarcrosstabs = function(df, x, y, weights, fill = NULL){
 
 ggbarcrosstabs_svy = function(surveyobj, x, y, fill = NULL){
   df = surveyobj$variables
-  df$wts = weights(surveyobj)
+  df$wts = stats::weights(surveyobj)
   newdf = df %>% group_by({{y}},{{x}})  %>% tally(, wt = wts) %>% mutate(f = n/sum(n))
   if(is.null(fill)){
     plotnew = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f))+facet_grid(cols = vars({{y}}))
@@ -189,7 +189,7 @@ ggbarcrosstabs3d = function(df, x, y, z, weights, fill = NULL){
 #' ggbarcrosstabs3d_svy(design, race, agecat, RIAGENDR)
 ggbarcrosstabs3d_svy = function(surveyobj, x, y, z, fill = NULL){
   df = surveyobj$variables
-  df$wts = weights(surveyobj)
+  df$wts = stats::weights(surveyobj)
   newdf = df %>% group_by({{z}},{{y}}, {{x}})  %>% tally(, wt = wts) %>% mutate(f = n/sum(n))
   if(is.null(fill)){
     plotnew = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f))+facet_grid(rows = vars({{y}}), cols = vars({{z}}))

@@ -27,8 +27,8 @@ This function creates a crosstab of x by a second variable y.
 \examples{
 library(survey)
 data(api)
-ggbarcrosstabs(apistrat, stype, yr.rnd, pw)+ylab("Proportion")+ggtitle("School Type by Year Round Status using api From survey Package")+xlab("Type of School E=Elementary, M=Middle School, H=High School")
-ggbarcrosstabs(apistrat, stype, yr.rnd, pw, fill = TRUE)+ylab("Proportion")+ggtitle("School Type by Year Round Status using api From survey Package")+xlab("Type of School E=Elementary, M=Middle School, H=High School")
+ggbarcrosstabs(apistrat, stype, yr.rnd, pw)+ylab("Proportion")
+ggbarcrosstabs(apistrat, stype, yr.rnd, pw, fill = TRUE)+ylab("Proportion")
 data(nhanes)
 ggbarcrosstabs(nhanes, race, agecat, WTMEC2YR)
 }
