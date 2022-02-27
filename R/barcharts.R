@@ -19,11 +19,13 @@
 #' data(nhanes)
 #' ggbarweight(nhanes, race, WTMEC2YR)+ylab("Proportion")
 ggbarweight = function(df, x, weights, fill = NULL){
+  f =  NULL
+  newdf = df %>% group_by({{x}})  %>% tally(wt = {{weights}}) %>% mutate(f = n/sum(n))
   if(is.null(fill)){
-    plot = ggplot(df, aes({{x}}))+geom_bar(aes(weight = {{weights}}, y = (..count..)/sum(..count..)))
+    plot = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight =f))
   }
   else if(fill == TRUE){
-    plot = ggplot(df, aes({{x}}))+geom_bar(aes(weight = {{weights}}, y = (..count..)/sum(..count..), fill = {{x}}))
+    plot = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f, fill = {{x}}))
   }
   return(plot)}
 
@@ -48,16 +50,19 @@ ggbarweight = function(df, x, weights, fill = NULL){
 #' ggbarweight_svy(dstrat, stype, fill = TRUE)
 #' data(nhanes)
 #' design <- svydesign(id=~SDMVPSU, strata=~SDMVSTRA, weights=~WTMEC2YR, nest=TRUE,data=nhanes)
-#' ggbarweight_svy(design, race)+ylab("Proportion")
-#' ggbarweight_svy(design, race, fill = TRUE)+ylab("Proportion")
+#' ggbarweight_svy(design, agecat)+ylab("Proportion")
+#' ggbarweight_svy(design, agecat, fill = TRUE)+ylab("Proportion")
 ggbarweight_svy = function(surveyobj, x, fill = NULL){
+  f = NULL
   df = surveyobj$variables
   wts = stats::weights(surveyobj)
+  df$wts = wts
+  newdf = df %>% group_by({{x}})  %>% tally(wt = wts) %>% mutate(f = n/sum(n))
   if(is.null(fill)){
-    plot = ggplot(df, aes({{x}}))+geom_bar(aes(weight = {{wts}}, y = (..count..)/sum(..count..)))
+    plot = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f))
   }
   else if(fill == TRUE){
-    plot = ggplot(df, aes({{x}}))+geom_bar(aes(weight = {{wts}}, y = (..count..)/sum(..count..), fill = {{x}}))
+    plot = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f, fill = {{x}}))
   }
   return(plot)}
 
@@ -83,6 +88,7 @@ ggbarweight_svy = function(surveyobj, x, fill = NULL){
 #' data(nhanes)
 #' ggbarcrosstabs(nhanes, race, agecat, WTMEC2YR)
 ggbarcrosstabs = function(df, x, y, weights, fill = NULL){
+  f = NULL
   newdf = df %>% group_by({{y}},{{x}})  %>% tally(wt = {{weights}}) %>% mutate(f = n/sum(n))
   if(is.null(fill)){
     plotnew = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f))+facet_grid(cols = vars({{y}}))
@@ -117,6 +123,8 @@ ggbarcrosstabs = function(df, x, y, weights, fill = NULL){
 #' ggbarcrosstabs_svy(design, race, agecat)
 
 ggbarcrosstabs_svy = function(surveyobj, x, y, fill = NULL){
+  f = NULL
+  wts = NULL
   df = surveyobj$variables
   df$wts = stats::weights(surveyobj)
   newdf = df %>% group_by({{y}},{{x}})  %>% tally(, wt = wts) %>% mutate(f = n/sum(n))
@@ -153,6 +161,7 @@ ggbarcrosstabs_svy = function(surveyobj, x, y, fill = NULL){
 #' data(nhanes)
 #' ggbarcrosstabs3d(nhanes, race, agecat, RIAGENDR, WTMEC2YR)
 ggbarcrosstabs3d = function(df, x, y, z, weights, fill = NULL){
+  f = NULL
   newdf = df %>% group_by({{z}},{{y}}, {{x}})  %>% tally(, wt = {{weights}}) %>% mutate(f = n/sum(n))
   if(is.null(fill)){
     plotnew = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f))+facet_grid(rows = vars({{y}}), cols = vars({{z}}))
@@ -188,6 +197,8 @@ ggbarcrosstabs3d = function(df, x, y, z, weights, fill = NULL){
 #' design <- svydesign(id=~SDMVPSU, strata=~SDMVSTRA, weights=~WTMEC2YR, nest=TRUE,data=nhanes)
 #' ggbarcrosstabs3d_svy(design, race, agecat, RIAGENDR)
 ggbarcrosstabs3d_svy = function(surveyobj, x, y, z, fill = NULL){
+  f = NULL
+  wts = NULL
   df = surveyobj$variables
   df$wts = stats::weights(surveyobj)
   newdf = df %>% group_by({{z}},{{y}}, {{x}})  %>% tally(, wt = wts) %>% mutate(f = n/sum(n))

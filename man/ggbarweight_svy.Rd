@@ -27,6 +27,6 @@ ggbarweight_svy(dstrat, stype)+ylab("Proportion")
 ggbarweight_svy(dstrat, stype, fill = TRUE)
 data(nhanes)
 design <- svydesign(id=~SDMVPSU, strata=~SDMVSTRA, weights=~WTMEC2YR, nest=TRUE,data=nhanes)
-ggbarweight_svy(design, race)+ylab("Proportion")
-ggbarweight_svy(design, race, fill = TRUE)+ylab("Proportion")
+ggbarweight_svy(design, agecat)+ylab("Proportion")
+ggbarweight_svy(design, agecat, fill = TRUE)+ylab("Proportion")
 }

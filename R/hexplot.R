@@ -34,8 +34,8 @@ gghexweight = function(df, x, y, weights){
 #' gghexweight_svy(dstrat, api99, api00)
 gghexweight_svy = function(surveyobj, x, y){
   df = surveyobj$variables
-  df$weights = weights(surveyobj)
-  return(ggplot(df, aes(x= {{x}}, y= {{y}}))+geom_hex(aes(weight = weights)))
+  wts = stats::weights(surveyobj)
+  return(ggplot(df, aes(x= {{x}}, y= {{y}}))+geom_hex(aes(weight = {{wts}})))
 }
 
 #' Weighted Hex Plot with One Facet Variable
@@ -76,7 +76,7 @@ gghexweight2d = function(df, x, y, z, weights){
 #' gghexweight2d_svy(dstrat, api99, api00, stype)
 gghexweight2d_svy = function(surveyobj, x,y, z){
   df = surveyobj$variables
-  weights = weights(surveyobj)
+  weights = stats::weights(surveyobj)
   return(ggplot(df, aes(x= {{x}}, y= {{y}}))+geom_hex(aes(weight = {{weights}}))+facet_grid(rows = vars({{z}})))
 }
 #' Weighted Box Plot with Two Facet Variables
@@ -119,7 +119,7 @@ gghexweight3d = function(df, x, y, a, b, weights){
 #' gghexweight3d_svy(dstrat, api99, api00, stype, awards)
 gghexweight3d_svy = function(surveyobj, x, y, a, b){
   df = surveyobj$variables
-  weights = weights(surveyobj)
+  weights = stats::weights(surveyobj)
   return(ggplot(df, aes(x= {{x}}, y= {{y}}))+geom_hex(aes(weight = {{weights}}))+facet_grid(rows = vars({{a}}), cols = vars({{b}})))
 }
 

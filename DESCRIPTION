@@ -1,10 +1,10 @@
 Package: ggsurvey
 Type: Package
-Title: ggplot2 for Survey Data
+Title: Simplifying `ggplot2` for Survey Data
 Version: 0.1.1
 Author: Brittany Alexander
 Maintainer: Brittany Alexander <brittanyalexander1337@gmail.com>
-Description: This package provides code to make plots of weighted survey data using ggplot2.
+Description: Functions for survey data including svydesign objects from the `survey` package that call`ggplot2` to make bar charts, histograms, boxplots, and hexplots of survey data.  
 License: MIT + file LICENSE
 Encoding: UTF-8
 Depends: R (>= 3.3), ggplot2, survey, hexbin, dplyr 
