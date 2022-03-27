@@ -4,7 +4,7 @@
 \alias{ggbarcrosstabs_svy}
 \title{Crosstabs for svy.design objects}
 \usage{
-ggbarcrosstabs_svy(surveyobj, x, y, fill = NULL)
+ggbarcrosstabs_svy(surveyobj, x, y, fill = NULL, labeller = NULL)
 }
 \arguments{
 \item{surveyobj}{svy.design obj}
@@ -14,6 +14,8 @@ ggbarcrosstabs_svy(surveyobj, x, y, fill = NULL)
 \item{y}{faceting variable (comparison factor)}
 
 \item{fill}{if true the fill of each bar will be a different color corresponding to the level of the factor}
+
+\item{labeller}{argument to pass onto facet_grid}
 }
 \value{
 ggplot object

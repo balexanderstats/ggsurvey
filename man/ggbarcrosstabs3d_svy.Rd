@@ -4,7 +4,7 @@
 \alias{ggbarcrosstabs3d_svy}
 \title{Crosstabs of Three Variables Using svy.design object}
 \usage{
-ggbarcrosstabs3d_svy(surveyobj, x, y, z, fill = NULL)
+ggbarcrosstabs3d_svy(surveyobj, x, y, z, fill = NULL, labeller = NULL)
 }
 \arguments{
 \item{surveyobj}{svy.design obj}
@@ -16,6 +16,8 @@ ggbarcrosstabs3d_svy(surveyobj, x, y, z, fill = NULL)
 \item{z}{crosstab variable 2 (vertical facets)}
 
 \item{fill}{if true the fill of each bar will be a different color corresponding to the level of the factor}
+
+\item{labeller}{argument to pass onto facet_grid}
 }
 \value{
 ggplot object

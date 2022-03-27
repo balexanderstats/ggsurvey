@@ -4,7 +4,7 @@
 \alias{ggbarcrosstabs}
 \title{Crosstabs of Two Variables}
 \usage{
-ggbarcrosstabs(df, x, y, weights, fill = NULL)
+ggbarcrosstabs(df, x, y, weights, fill = NULL, labeller = NULL)
 }
 \arguments{
 \item{df}{data frame of survey}
@@ -16,6 +16,8 @@ ggbarcrosstabs(df, x, y, weights, fill = NULL)
 \item{weights}{survey weights that sum to sample size}
 
 \item{fill}{if true the fill of each bar will be a different color corresponding to the level of the factor}
+
+\item{labeller}{argument to pass onto facet_grid}
 }
 \value{
 ggplot object

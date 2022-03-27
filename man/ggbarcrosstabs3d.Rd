@@ -4,7 +4,7 @@
 \alias{ggbarcrosstabs3d}
 \title{Crosstabs of Three Variables}
 \usage{
-ggbarcrosstabs3d(df, x, y, z, weights, fill = NULL)
+ggbarcrosstabs3d(df, x, y, z, weights, fill = NULL, labeller = NULL)
 }
 \arguments{
 \item{df}{data frame}
@@ -18,6 +18,8 @@ ggbarcrosstabs3d(df, x, y, z, weights, fill = NULL)
 \item{weights}{survey weights that sum to sample size}
 
 \item{fill}{if true the fill of each bar will be a different color corresponding to the level of the factor}
+
+\item{labeller}{argument to pass onto facet_grid}
 }
 \value{
 ggplot pbject

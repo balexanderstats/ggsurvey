@@ -76,6 +76,7 @@ ggbarweight_svy = function(surveyobj, x, fill = NULL){
 #' @param y faceting variable
 #' @param weights survey weights that sum to sample size
 #' @param fill if true the fill of each bar will be a different color corresponding to the level of the factor
+#' @param labeller argument to pass onto facet_grid
 #'
 #' @return ggplot object
 #' @export
@@ -87,14 +88,23 @@ ggbarweight_svy = function(surveyobj, x, fill = NULL){
 #' ggbarcrosstabs(apistrat, stype, yr.rnd, pw, fill = TRUE)+ylab("Proportion")
 #' data(nhanes)
 #' ggbarcrosstabs(nhanes, race, agecat, WTMEC2YR)
-ggbarcrosstabs = function(df, x, y, weights, fill = NULL){
+ggbarcrosstabs = function(df, x, y, weights, fill = NULL, labeller = NULL){
   f = NULL
   newdf = df %>% group_by({{y}},{{x}})  %>% tally(wt = {{weights}}) %>% mutate(f = n/sum(n))
   if(is.null(fill)){
-    plotnew = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f))+facet_grid(cols = vars({{y}}))
+    if(is.null(labeller)){
+      plotnew = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f))+facet_grid(cols = vars({{y}}))
+    }
+    else{
+      plotnew = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f))+facet_grid(cols = vars({{y}}), labeller = labeller)
+    }
+
   }
   else if(fill == TRUE){
-    plotnew = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f, fill = {{x}}))+facet_grid(cols = vars({{y}}))
+    if(is.null(labeller)){
+      plotnew = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f, fill = {{x}}))+facet_grid(cols = vars({{y}}))}
+    else{
+      plotnew = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f, fill = {{x}}))+facet_grid(cols = vars({{y}}), labeller = labeller())}
   }
   return(plotnew)
 }
@@ -108,6 +118,7 @@ ggbarcrosstabs = function(df, x, y, weights, fill = NULL){
 #' @param y faceting variable (comparison factor)
 #' @param surveyobj svy.design obj
 #' @param fill if true the fill of each bar will be a different color corresponding to the level of the factor
+#' @param labeller argument to pass onto facet_grid
 #'
 #' @return ggplot object
 #' @export
@@ -122,18 +133,27 @@ ggbarcrosstabs = function(df, x, y, weights, fill = NULL){
 #' design <- svydesign(id=~SDMVPSU, strata=~SDMVSTRA, weights=~WTMEC2YR, nest=TRUE,data=nhanes)
 #' ggbarcrosstabs_svy(design, race, agecat)
 
-ggbarcrosstabs_svy = function(surveyobj, x, y, fill = NULL){
+ggbarcrosstabs_svy = function(surveyobj, x, y, fill = NULL, labeller = NULL){
   f = NULL
   wts = NULL
   df = surveyobj$variables
   df$wts = stats::weights(surveyobj)
   newdf = df %>% group_by({{y}},{{x}})  %>% tally(, wt = wts) %>% mutate(f = n/sum(n))
   if(is.null(fill)){
-    plotnew = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f))+facet_grid(cols = vars({{y}}))
+    if(is.null(labeller)){
+      plotnew = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f))+facet_grid(cols = vars({{y}}))
+    }
+    else{
+      plotnew = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f))+facet_grid(cols = vars({{y}}), labeller = labeller)
+    }
+
   }
   else if(fill == TRUE){
-    plotnew = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f, fill = {{x}}))+facet_grid(cols = vars({{y}}))
-  }
+    if(is.null(labeller)){
+      plotnew = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f, fill = {{x}}))+facet_grid(cols = vars({{y}}))}
+    else{
+      plotnew = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f, fill = {{x}}))+facet_grid(cols = vars({{y}}), labeller = labeller())}
+    }
 
   return(plotnew)
 }
@@ -149,6 +169,7 @@ ggbarcrosstabs_svy = function(surveyobj, x, y, fill = NULL){
 #' @param z crosstab variable 2 (vertical facets)
 #' @param weights survey weights that sum to sample size
 #' @param fill if true the fill of each bar will be a different color corresponding to the level of the factor
+#' @param labeller argument to pass onto facet_grid
 #'
 #' @return ggplot pbject
 #' @export
@@ -160,14 +181,27 @@ ggbarcrosstabs_svy = function(surveyobj, x, y, fill = NULL){
 #' ggbarcrosstabs3d(apistrat, stype, yr.rnd, awards, pw, TRUE)
 #' data(nhanes)
 #' ggbarcrosstabs3d(nhanes, race, agecat, RIAGENDR, WTMEC2YR)
-ggbarcrosstabs3d = function(df, x, y, z, weights, fill = NULL){
+ggbarcrosstabs3d = function(df, x, y, z, weights, fill = NULL, labeller = NULL){
   f = NULL
   newdf = df %>% group_by({{z}},{{y}}, {{x}})  %>% tally(, wt = {{weights}}) %>% mutate(f = n/sum(n))
   if(is.null(fill)){
-    plotnew = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f))+facet_grid(rows = vars({{y}}), cols = vars({{z}}))
+    if(is.null(labeller)){
+      plotnew = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f))+facet_grid(rows = vars({{y}}), cols = vars({{z}}))
+    }
+    else{
+      plotnew = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f))+facet_grid(rows = vars({{y}}), cols = vars({{z}}), labeller = labeller)
+    }
+
   }
   else if(fill == TRUE){
-    plotnew = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f, fill = {{x}}))+facet_grid(rows = vars({{y}}), cols = vars({{z}}))
+    if(is.null(labeller)){
+      plotnew = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f, fill = {{x}}))+facet_grid(rows = vars({{y}}), cols = vars({{z}}))
+
+    }
+    else{
+      plotnew = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f, fill = {{x}}))+facet_grid(rows = vars({{y}}), cols = vars({{z}}), labeller = labeller)
+    }
+
   }
 
   return(plotnew)
@@ -183,6 +217,7 @@ ggbarcrosstabs3d = function(df, x, y, z, weights, fill = NULL){
 #' @param y crosstab variable 1 (horizontal facets)
 #' @param z crosstab variable 2 (vertical facets)
 #' @param fill if true the fill of each bar will be a different color corresponding to the level of the factor
+#' @param labeller argument to pass onto facet_grid
 #'
 #' @return ggplot object
 #' @export
@@ -196,17 +231,30 @@ ggbarcrosstabs3d = function(df, x, y, z, weights, fill = NULL){
 #' data(nhanes)
 #' design <- svydesign(id=~SDMVPSU, strata=~SDMVSTRA, weights=~WTMEC2YR, nest=TRUE,data=nhanes)
 #' ggbarcrosstabs3d_svy(design, race, agecat, RIAGENDR)
-ggbarcrosstabs3d_svy = function(surveyobj, x, y, z, fill = NULL){
+ggbarcrosstabs3d_svy = function(surveyobj, x, y, z, fill = NULL, labeller= NULL){
   f = NULL
   wts = NULL
   df = surveyobj$variables
   df$wts = stats::weights(surveyobj)
   newdf = df %>% group_by({{z}},{{y}}, {{x}})  %>% tally(, wt = wts) %>% mutate(f = n/sum(n))
   if(is.null(fill)){
-    plotnew = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f))+facet_grid(rows = vars({{y}}), cols = vars({{z}}))
+    if(is.null(labeller)){
+      plotnew = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f))+facet_grid(rows = vars({{y}}), cols = vars({{z}}))
+    }
+    else{
+      plotnew = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f))+facet_grid(rows = vars({{y}}), cols = vars({{z}}), labeller = labeller)
+    }
+
   }
   else if(fill == TRUE){
-    plotnew = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f, fill = {{x}}))+facet_grid(rows = vars({{y}}), cols = vars({{z}}))
+    if(is.null(labeller)){
+      plotnew = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f, fill = {{x}}))+facet_grid(rows = vars({{y}}), cols = vars({{z}}))
+
+    }
+    else{
+      plotnew = ggplot(newdf, aes({{x}}))+geom_bar(aes(weight = f, fill = {{x}}))+facet_grid(rows = vars({{y}}), cols = vars({{z}}), labeller = labeller)
+    }
+
   }
 
   return(plotnew)

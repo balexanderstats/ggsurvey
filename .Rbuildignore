@@ -1,2 +1,8 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^\.github$
+^\shortcourse$
+^exampleplot\.png$
+^ggsurvey_0\.1\.0\.pdf$
+^figure$
+^shortcourse$
