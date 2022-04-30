@@ -7,7 +7,7 @@ Maintainer: Brittany Alexander <balexanderstatistics@gmail.com>
 Description: Functions for survey data including svydesign objects from the 'survey' package that call 'ggplot2' to make bar charts, histograms, boxplots, and hexplots of survey data.  
 License: MIT + file LICENSE
 Encoding: UTF-8
-Depends: R (>= 3.5.0), ggplot2, survey, hexbin, dplyr
+Depends: R (>= 3.5.0), ggplot2, Matrix, survey, hexbin, dplyr
 Imports: stats
 LazyData: true
 RoxygenNote: 7.1.2
