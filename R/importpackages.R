@@ -1,2 +1,2 @@
-#' @import ggplot2 survey hexbin dplyr
+#' @import ggplot2 survey hexbin dplyr Matrix
 NULL
