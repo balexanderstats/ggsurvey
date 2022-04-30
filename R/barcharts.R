@@ -125,6 +125,7 @@ ggbarcrosstabs = function(df, x, y, weights, fill = NULL, labeller = NULL){
 #'
 #' @examples
 #' library(survey)
+#' library(ggplot2)
 #' data(api)
 #' dstrat<-svydesign(id=~1,strata=~stype, weights=~pw, data=apistrat, fpc=~fpc)
 #' ggbarcrosstabs_svy(dstrat, stype, yr.rnd)+ylab("Proportion")

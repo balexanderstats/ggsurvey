@@ -25,6 +25,7 @@ In ggsurvey you specify both the plotting variables and weights in plain text wi
 }
 \examples{
 library(survey)
+library(ggplot2)
 data(api)
 dstrat<-svydesign(id=~1,strata=~stype, weights=~pw, data=apistrat, fpc=~fpc)
 ggbarcrosstabs_svy(dstrat, stype, yr.rnd)+ylab("Proportion")

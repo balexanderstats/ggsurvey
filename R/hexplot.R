@@ -10,6 +10,7 @@
 #' @export
 #'
 #' @examples
+#' library(survey)
 #' data(api)
 #' gghexweight(apistrat, api99, api00, pw)
 gghexweight = function(df, x, y, weights){
@@ -51,6 +52,7 @@ gghexweight_svy = function(surveyobj, x, y){
 #' @export
 #'
 #' @examples
+#' library(survey)
 #' data(api)
 #' gghexweight2d(apistrat, api99, api00, stype, pw)
 gghexweight2d = function(df, x, y, z, weights){
@@ -93,6 +95,7 @@ gghexweight2d_svy = function(surveyobj, x,y, z){
 #' @export
 #'
 #' @examples
+#' library(survey)
 #' data(api)
 #' gghexweight3d(apistrat, api99, api00, stype, awards, pw)
 gghexweight3d = function(df, x, y, a, b, weights){

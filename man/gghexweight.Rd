@@ -22,6 +22,7 @@ ggplot object
 In ggsurvey you specify both the plotting variables and weights in plain text with no quotes.
 }
 \examples{
+library(survey)
 data(api)
 gghexweight(apistrat, api99, api00, pw)
 }
