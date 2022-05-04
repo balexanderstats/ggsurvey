@@ -11,10 +11,9 @@ Example Plot:
 
 ![exampleplot](https://user-images.githubusercontent.com/31777718/150824294-73c293ed-9c16-4c84-a5ff-66b153e048aa.png)
 
-This package is currently located on github.  Run the following code to install. 
+This package is currently available on CRAN.
 ``` r
-# install.packages("devtools")  #if devtools is not installed on your machine
-devtools::install_github("balexanderstats/ggsurvey")
+install.packages("ggsurvey")
 ```
 
 Future Functionality:
